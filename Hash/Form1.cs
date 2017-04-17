@@ -171,6 +171,11 @@ namespace Hash
 
         string filepathSaveFile = ""; // Filepath for saving hashes to .txt file
 
+        private void comboBoxChooseMethod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void textBoxInput_TextChanged(object sender, EventArgs e)
         {
 
@@ -320,120 +325,132 @@ namespace Hash
             textBoxGivenHash.Text = "";
         }
 
-        private void buttonCheckMD5_Click(object sender, EventArgs e) // Hashes a file and compares to given MD5 hash
+        private void buttonCheck_Click(object sender, EventArgs e)
         {
-            filepathcomp = textBoxUploadFile.Text;
-            if (textBoxUploadFile.Text == "" || File.Exists(filepathcomp) == false)
+            if (comboBoxChooseMethod.SelectedIndex == 0) //MD5
             {
-                MessageBox.Show("No file uploaded or file not found");
-            }
-            else
-            {
-                if (textBoxGivenHash.Text == "")
+                filepathcomp = textBoxUploadFile.Text;
+                if (textBoxUploadFile.Text == "" || File.Exists(filepathcomp) == false)
                 {
-                    MessageBox.Show("No hash given");
+                    MessageBox.Show("No file uploaded or file not found");
                 }
                 else
                 {
+                    if (textBoxGivenHash.Text == "")
+                    {
+                        MessageBox.Show("No hash given");
+                    }
+                    else
+                    {
                         filecompMD5 = GetMD5HashFromFile(filepathcomp);
                         string filecompMD5low = filecompMD5.ToLower();
-                    if (filecompMD5 == textBoxGivenHash.Text || filecompMD5low == textBoxGivenHash.Text)
-                    {
-                        MessageBox.Show("The MD5 hashes match.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("The MD5 hashes don't match! Be careful!");
-                    }
-                }
-            }
-        }
-        private void buttonCheckSHA1_Click(object sender, EventArgs e) // Hashes a file and compares to given SHA1 hash
-        {
-            filepathcomp = textBoxUploadFile.Text;
-            if (textBoxUploadFile.Text == "" || File.Exists(filepathcomp) == false)
-            {
-                MessageBox.Show("No file uploaded or file not found");
-            }
-            else
-            {
-                if (textBoxGivenHash.Text == "")
-                {
-                    MessageBox.Show("No hash given");
-                }
-                else
-                {
-                    filecompSHA1 = GetSHA1HashFromFile(filepathcomp);
-                    string filecompSHA1low = filecompSHA1.ToLower();
-                    if (filecompSHA1 == textBoxGivenHash.Text || filecompSHA1low == textBoxGivenHash.Text)
-                    {
-                        MessageBox.Show("The SHA1 hashes match");
-                    }
-                    else
-                    {
-                        MessageBox.Show("The SHA1 hashes don't match! Be careful!");
+                        if (filecompMD5 == textBoxGivenHash.Text || filecompMD5low == textBoxGivenHash.Text)
+                        {
+                            MessageBox.Show("The MD5 hashes match.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("The MD5 hashes don't match! Be careful!");
+                        }
                     }
                 }
             }
-        }
 
-        private void buttonCheckSHA256_Click(object sender, EventArgs e) // Hashes a file and compares to given SHA256 hash
-        {
-            filepathcomp = textBoxUploadFile.Text;
-            if (textBoxUploadFile.Text == "" || File.Exists(filepathcomp) == false)
+            else if (comboBoxChooseMethod.SelectedIndex == 1) //SHA1
             {
-                MessageBox.Show("No file uploaded or file not found");
-            }
-            else
-            {
-                if (textBoxGivenHash.Text == "")
+                filepathcomp = textBoxUploadFile.Text;
+                if (textBoxUploadFile.Text == "" || File.Exists(filepathcomp) == false)
                 {
-                    MessageBox.Show("No hash given");
+                    MessageBox.Show("No file uploaded or file not found");
                 }
                 else
                 {
-                    filecompSHA256 = GetSHA256HashFromFile(filepathcomp);
-                    string filecompSHA256low = filecompSHA256.ToLower();
-                    if (filecompSHA256 == textBoxGivenHash.Text || filecompSHA256low == textBoxGivenHash.Text)
+                    if (textBoxGivenHash.Text == "")
                     {
-                        MessageBox.Show("The SHA256 hashes match");
+                        MessageBox.Show("No hash given");
                     }
                     else
                     {
-                        MessageBox.Show("The SHA256 hashes don't match! Be careful!");
+                        filecompSHA1 = GetSHA1HashFromFile(filepathcomp);
+                        string filecompSHA1low = filecompSHA1.ToLower();
+                        if (filecompSHA1 == textBoxGivenHash.Text || filecompSHA1low == textBoxGivenHash.Text)
+                        {
+                            MessageBox.Show("The SHA1 hashes match");
+                        }
+                        else
+                        {
+                            MessageBox.Show("The SHA1 hashes don't match! Be careful!");
+                        }
                     }
                 }
             }
-        }
 
-        private void buttonCheckSHA512_Click(object sender, EventArgs e)
-        {
-            filepathcomp = textBoxUploadFile.Text;
-            if (textBoxUploadFile.Text == "" || File.Exists(filepathcomp) == false)
+            else if (comboBoxChooseMethod.SelectedIndex == 2) //SHA256
+
             {
-                MessageBox.Show("No file uploaded or file not found");
-            }
-            else
-            {
-                if (textBoxGivenHash.Text == "")
+                filepathcomp = textBoxUploadFile.Text;
+                if (textBoxUploadFile.Text == "" || File.Exists(filepathcomp) == false)
                 {
-                    MessageBox.Show("No hash given");
+                    MessageBox.Show("No file uploaded or file not found");
                 }
                 else
                 {
-                    filecompSHA512 = GetSHA512HashFromFile(filepathcomp);
-                    string filecompSHA512low = filecompSHA512.ToLower();
-                    if (filecompSHA512 == textBoxGivenHash.Text || filecompSHA512low == textBoxGivenHash.Text)
+                    if (textBoxGivenHash.Text == "")
                     {
-                        MessageBox.Show("The SHA512 hashes match");
+                        MessageBox.Show("No hash given");
                     }
                     else
                     {
-                        MessageBox.Show("The SHA512 hashes don't match! Be careful!");
+                        filecompSHA256 = GetSHA256HashFromFile(filepathcomp);
+                        string filecompSHA256low = filecompSHA256.ToLower();
+                        if (filecompSHA256 == textBoxGivenHash.Text || filecompSHA256low == textBoxGivenHash.Text)
+                        {
+                            MessageBox.Show("The SHA256 hashes match");
+                        }
+                        else
+                        {
+                            MessageBox.Show("The SHA256 hashes don't match! Be careful!");
+                        }
                     }
                 }
             }
+
+            else if (comboBoxChooseMethod.SelectedIndex == 3) //SHA512
+            {
+                filepathcomp = textBoxUploadFile.Text;
+                if (textBoxUploadFile.Text == "" || File.Exists(filepathcomp) == false)
+                {
+                    MessageBox.Show("No file uploaded or file not found");
+                }
+                else
+                {
+                    if (textBoxGivenHash.Text == "")
+                    {
+                        MessageBox.Show("No hash given");
+                    }
+                    else
+                    {
+                        filecompSHA512 = GetSHA512HashFromFile(filepathcomp);
+                        string filecompSHA512low = filecompSHA512.ToLower();
+                        if (filecompSHA512 == textBoxGivenHash.Text || filecompSHA512low == textBoxGivenHash.Text)
+                        {
+                            MessageBox.Show("The SHA512 hashes match");
+                        }
+                        else
+                        {
+                            MessageBox.Show("The SHA512 hashes don't match! Be careful!");
+                        }
+                    }
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("No hash method chosen");
+            }
         }
+        
+
 
         private void textBoxUploadFile_TextChanged(object sender, EventArgs e)
         {
@@ -501,7 +518,7 @@ namespace Hash
 
         }
 
-        
+
     }
 }
 

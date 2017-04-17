@@ -51,9 +51,6 @@
             this.buttonOpenFileCompare = new System.Windows.Forms.Button();
             this.buttonClearString = new System.Windows.Forms.Button();
             this.buttonClearFile = new System.Windows.Forms.Button();
-            this.buttonCheckMD5 = new System.Windows.Forms.Button();
-            this.buttonCheckSHA1 = new System.Windows.Forms.Button();
-            this.buttonCheckSHA256 = new System.Windows.Forms.Button();
             this.buttonClearCompFile = new System.Windows.Forms.Button();
             this.buttonClearCompHash = new System.Windows.Forms.Button();
             this.buttonSaveTextHashes = new System.Windows.Forms.Button();
@@ -62,7 +59,9 @@
             this.radioButtonhigh = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxSHA512 = new System.Windows.Forms.TextBox();
-            this.buttonCheckSHA512 = new System.Windows.Forms.Button();
+            this.comboBoxChooseMethod = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.buttonCheck = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxInputString
@@ -307,42 +306,6 @@
             this.buttonClearFile.UseVisualStyleBackColor = true;
             this.buttonClearFile.Click += new System.EventHandler(this.buttonClearFile_Click);
             // 
-            // buttonCheckMD5
-            // 
-            this.buttonCheckMD5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCheckMD5.Location = new System.Drawing.Point(14, 732);
-            this.buttonCheckMD5.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonCheckMD5.Name = "buttonCheckMD5";
-            this.buttonCheckMD5.Size = new System.Drawing.Size(112, 32);
-            this.buttonCheckMD5.TabIndex = 24;
-            this.buttonCheckMD5.Text = "Check MD5 hash";
-            this.buttonCheckMD5.UseVisualStyleBackColor = true;
-            this.buttonCheckMD5.Click += new System.EventHandler(this.buttonCheckMD5_Click);
-            // 
-            // buttonCheckSHA1
-            // 
-            this.buttonCheckSHA1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCheckSHA1.Location = new System.Drawing.Point(135, 733);
-            this.buttonCheckSHA1.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonCheckSHA1.Name = "buttonCheckSHA1";
-            this.buttonCheckSHA1.Size = new System.Drawing.Size(112, 31);
-            this.buttonCheckSHA1.TabIndex = 25;
-            this.buttonCheckSHA1.Text = "Check SHA1 hash";
-            this.buttonCheckSHA1.UseVisualStyleBackColor = true;
-            this.buttonCheckSHA1.Click += new System.EventHandler(this.buttonCheckSHA1_Click);
-            // 
-            // buttonCheckSHA256
-            // 
-            this.buttonCheckSHA256.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCheckSHA256.Location = new System.Drawing.Point(260, 732);
-            this.buttonCheckSHA256.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonCheckSHA256.Name = "buttonCheckSHA256";
-            this.buttonCheckSHA256.Size = new System.Drawing.Size(112, 31);
-            this.buttonCheckSHA256.TabIndex = 26;
-            this.buttonCheckSHA256.Text = "Check SHA256 hash";
-            this.buttonCheckSHA256.UseVisualStyleBackColor = true;
-            this.buttonCheckSHA256.Click += new System.EventHandler(this.buttonCheckSHA256_Click);
-            // 
             // buttonClearCompFile
             // 
             this.buttonClearCompFile.Location = new System.Drawing.Point(12, 634);
@@ -434,23 +397,50 @@
             this.textBoxSHA512.Size = new System.Drawing.Size(484, 20);
             this.textBoxSHA512.TabIndex = 35;
             // 
-            // buttonCheckSHA512
+            // comboBoxChooseMethod
             // 
-            this.buttonCheckSHA512.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCheckSHA512.Location = new System.Drawing.Point(386, 732);
-            this.buttonCheckSHA512.Name = "buttonCheckSHA512";
-            this.buttonCheckSHA512.Size = new System.Drawing.Size(112, 31);
-            this.buttonCheckSHA512.TabIndex = 36;
-            this.buttonCheckSHA512.Text = "Check SHA512 hash";
-            this.buttonCheckSHA512.UseVisualStyleBackColor = true;
-            this.buttonCheckSHA512.Click += new System.EventHandler(this.buttonCheckSHA512_Click);
+            this.comboBoxChooseMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxChooseMethod.FormattingEnabled = true;
+            this.comboBoxChooseMethod.Items.AddRange(new object[] {
+            "MD5",
+            "SHA1",
+            "SHA256",
+            "SHA512"});
+            this.comboBoxChooseMethod.Location = new System.Drawing.Point(177, 799);
+            this.comboBoxChooseMethod.Name = "comboBoxChooseMethod";
+            this.comboBoxChooseMethod.Size = new System.Drawing.Size(123, 21);
+            this.comboBoxChooseMethod.TabIndex = 37;
+            this.comboBoxChooseMethod.SelectedIndexChanged += new System.EventHandler(this.comboBoxChooseMethod_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(10, 798);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(155, 18);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Choose hash method:";
+            // 
+            // buttonCheck
+            // 
+            this.buttonCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCheck.Location = new System.Drawing.Point(317, 789);
+            this.buttonCheck.Name = "buttonCheck";
+            this.buttonCheck.Size = new System.Drawing.Size(181, 36);
+            this.buttonCheck.TabIndex = 39;
+            this.buttonCheck.Text = "Compare";
+            this.buttonCheck.UseVisualStyleBackColor = true;
+            this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 779);
-            this.Controls.Add(this.buttonCheckSHA512);
+            this.ClientSize = new System.Drawing.Size(514, 836);
+            this.Controls.Add(this.buttonCheck);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboBoxChooseMethod);
             this.Controls.Add(this.textBoxSHA512);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.radioButtonhigh);
@@ -459,9 +449,6 @@
             this.Controls.Add(this.buttonSaveTextHashes);
             this.Controls.Add(this.buttonClearCompHash);
             this.Controls.Add(this.buttonClearCompFile);
-            this.Controls.Add(this.buttonCheckSHA256);
-            this.Controls.Add(this.buttonCheckSHA1);
-            this.Controls.Add(this.buttonCheckMD5);
             this.Controls.Add(this.buttonClearFile);
             this.Controls.Add(this.buttonClearString);
             this.Controls.Add(this.buttonOpenFileCompare);
@@ -519,9 +506,6 @@
         private System.Windows.Forms.Button buttonOpenFileCompare;
         private System.Windows.Forms.Button buttonClearString;
         private System.Windows.Forms.Button buttonClearFile;
-        private System.Windows.Forms.Button buttonCheckMD5;
-        private System.Windows.Forms.Button buttonCheckSHA1;
-        private System.Windows.Forms.Button buttonCheckSHA256;
         private System.Windows.Forms.Button buttonClearCompFile;
         private System.Windows.Forms.Button buttonClearCompHash;
         private System.Windows.Forms.Button buttonSaveTextHashes;
@@ -530,7 +514,9 @@
         private System.Windows.Forms.RadioButton radioButtonhigh;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxSHA512;
-        private System.Windows.Forms.Button buttonCheckSHA512;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonCheck;
+        protected System.Windows.Forms.ComboBox comboBoxChooseMethod;
     }
 }
 

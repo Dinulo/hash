@@ -37,3 +37,12 @@ C:\Users\Aleksandar Dinulovic\Desktop\Hash neu\Hash\obj\Debug\Hash.csproj.Genera
 D:\Dokumente Privat\Git projects\Hash\bin\Debug\Hash.exe.config
 D:\Dokumente Privat\Git projects\Hash\obj\Debug\Hash.exe
 D:\Dokumente Privat\Git projects\Hash\obj\Debug\Hash.pdb
+C:\Users\Aleksandar Dinulovic\Documents\Git projects\Hash neu\Hash\bin\Debug\Hash.exe.config
+C:\Users\Aleksandar Dinulovic\Documents\Git projects\Hash neu\Hash\obj\Debug\Hash.exe
+C:\Users\Aleksandar Dinulovic\Documents\Git projects\Hash neu\Hash\obj\Debug\Hash.pdb
+C:\Users\Aleksandar Dinulovic\Documents\Git projects\Hash neu\Hash\bin\Debug\Hash.exe
+C:\Users\Aleksandar Dinulovic\Documents\Git projects\Hash neu\Hash\bin\Debug\Hash.pdb
+C:\Users\Aleksandar Dinulovic\Documents\Git projects\Hash neu\Hash\obj\Debug\Hash.csprojResolveAssemblyReference.cache
+C:\Users\Aleksandar Dinulovic\Documents\Git projects\Hash neu\Hash\obj\Debug\Hash.Form1.resources
+C:\Users\Aleksandar Dinulovic\Documents\Git projects\Hash neu\Hash\obj\Debug\Hash.Properties.Resources.resources
+C:\Users\Aleksandar Dinulovic\Documents\Git projects\Hash neu\Hash\obj\Debug\Hash.csproj.GenerateResource.Cache
