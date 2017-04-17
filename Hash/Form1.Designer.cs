@@ -406,7 +406,7 @@
             "SHA1",
             "SHA256",
             "SHA512"});
-            this.comboBoxChooseMethod.Location = new System.Drawing.Point(177, 799);
+            this.comboBoxChooseMethod.Location = new System.Drawing.Point(177, 732);
             this.comboBoxChooseMethod.Name = "comboBoxChooseMethod";
             this.comboBoxChooseMethod.Size = new System.Drawing.Size(123, 21);
             this.comboBoxChooseMethod.TabIndex = 37;
@@ -416,7 +416,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 798);
+            this.label3.Location = new System.Drawing.Point(10, 731);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 18);
             this.label3.TabIndex = 38;
@@ -425,7 +425,7 @@
             // buttonCheck
             // 
             this.buttonCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCheck.Location = new System.Drawing.Point(317, 789);
+            this.buttonCheck.Location = new System.Drawing.Point(317, 722);
             this.buttonCheck.Name = "buttonCheck";
             this.buttonCheck.Size = new System.Drawing.Size(181, 36);
             this.buttonCheck.TabIndex = 39;
@@ -437,7 +437,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 836);
+            this.ClientSize = new System.Drawing.Size(514, 769);
             this.Controls.Add(this.buttonCheck);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxChooseMethod);
