@@ -4,4 +4,4 @@ Hash is a little tool which compares hashes of text inputs in MD5, SHA1, SHA256 
 This repository is merely a school project I've done in order to advance my skills in C#.
 
 ## Binary
-Since this is a Visual Studio project, the binary file can be found in /Hash/bin/Debug/Hash.exe.
+Since this is a Visual Studio project, the binary file can be found in [/Hash/bin/Debug](https://github.com/Proktophantasmist/hash/tree/master/Hash/bin/Debug) as Hash.exe.
